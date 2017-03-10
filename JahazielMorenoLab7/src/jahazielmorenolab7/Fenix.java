@@ -18,7 +18,12 @@ public class Fenix extends Guerrero{
 
     @Override
     public float Ataque(float DefensaRival, float vidaRival, float AtaqueRival) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        float attack = (float) (ataque * 0.75);
+        vidaRival =  (float) (vidaRival - ((ataque+attack) - DefensaRival)) ;
+        return vidaRival;
+    
+    
     }
 
      

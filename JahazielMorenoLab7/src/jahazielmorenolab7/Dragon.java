@@ -18,7 +18,9 @@ public class Dragon extends Guerrero{
     @Override
     public float Ataque(float DefensaRival, float vidaRival, float AtaqueRival) {
         
-        
+        float attack = (float) (ataque * 0.35);
+        vidaRival =  (float) (vidaRival - ((ataque+attack) - DefensaRival)) ;
+        return vidaRival;
     
     }
     

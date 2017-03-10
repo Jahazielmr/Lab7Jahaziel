@@ -48,7 +48,10 @@ public class Alumnos extends Guerrero{
 
     @Override
     public float Ataque(float DefensaRival, float vidaRival, float AtaqueRival) {
-    
+        float attack = (float)(ataque *0.75);
+        return vidaRival= (float) (vidaRival-((attack+ataque)-DefensaRival));
+        
+        
     
     }
 

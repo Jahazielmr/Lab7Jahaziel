@@ -4,7 +4,11 @@ public class HombreLobo extends Guerrero{
 
     @Override
     public float Ataque(float DefensaRival, float vidaRival, float AtaqueRival) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         vidaRival =  (float) (vidaRival - ((ataque) - DefensaRival)) ;
+        return vidaRival;
+        
+    
+    
     }
 
     public HombreLobo() {

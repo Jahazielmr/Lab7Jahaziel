@@ -19,7 +19,12 @@ public class Minotauro extends Guerrero{
 
     @Override
     public float Ataque(float DefensaRival, float vidaRival, float AtaqueRival) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+        float attack = (float) (ataque * 2);
+        float def = (float) (DefensaRival * 0.50);
+        vidaRival =  (float) (vidaRival - ((ataque+attack) - (DefensaRival+def))) ;
+        return vidaRival;
+    
     }
     
     
