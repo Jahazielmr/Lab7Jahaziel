@@ -49,9 +49,13 @@ public class Batalla extends Thread implements Serializable{
             jugador2.setSalud(jugador1.Ataque(jugador2.getDefensa(), jugador2.getSalud(), jugador2.getAtaque()));
             jugador1.setSalud(jugador2.Ataque(jugador1.getDefensa(), jugador1.getSalud(), jugador1.getAtaque()));
             
+            jugador2.setDefensa(jugador1.Ataque(jugador2.getDefensa(), jugador2.getSalud(), jugador2.getAtaque()));
+            jugador1.setDefensa(jugador2.Ataque(jugador1.getDefensa(), jugador1.getSalud(), jugador1.getAtaque()));
+            
+            
             
             System.out.println(this);
-            bitacora+=this+"\n";
+            bitacora+= jugador2.getSalud()+"\n"+ jugador1.getSalud()+"\n";
         }
         if (jugador1.getSalud()>0) {
             System.out.println("El ganador es: "+jugador1);

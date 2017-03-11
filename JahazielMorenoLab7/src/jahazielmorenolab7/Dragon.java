@@ -19,7 +19,7 @@ public class Dragon extends Guerrero{
     public float Ataque(float DefensaRival, float vidaRival, float AtaqueRival) {
         
         float attack = (float) (ataque * 0.35);
-        vidaRival =  (float) (vidaRival - ((ataque+attack) - DefensaRival)) ;
+        vidaRival =  (float) (vidaRival - ((ataque+attack) - defensaRival)) ;
         return vidaRival;
     
     }

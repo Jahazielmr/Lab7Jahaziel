@@ -553,8 +553,6 @@ public class Principal extends javax.swing.JFrame  {
 
         jLabel17.setText("Escoja personaje");
 
-        cb_bestia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jButton7.setText("Eliminar");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
