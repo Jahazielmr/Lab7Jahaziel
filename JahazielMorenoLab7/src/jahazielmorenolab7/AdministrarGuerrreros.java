@@ -42,10 +42,7 @@ public class AdministrarGuerrreros {
         listaGuerrreros.add(guerrero);
     }
 
-    @Override
-    public String toString() {
-        return listaGuerrreros + ", archivo=" + archivo ;
-    }
+    
     
     public void escribirArchivo(){
         FileOutputStream fw = null;
@@ -77,7 +74,7 @@ public class AdministrarGuerrreros {
                 ObjectInputStream objeto = new ObjectInputStream(entrada);
                 
                 try {
-                    while((temp = (Guerrero) objeto.readObject())!=null){//simpre lanzara un exception
+                    while((temp = (Guerrero) objeto.readObject())!=null){
                         listaGuerrreros.add(temp);
                     }
                 } catch (EOFException e) {

@@ -13,6 +13,7 @@ public class AdministrarBatallas {
     private ArrayList <Batalla> batallas = new ArrayList();
     private File archivo= null;
     
+    private static final long SerialVersionUID = 7772L;
     
     public AdministrarBatallas (String path){
         archivo = new File(path);
@@ -72,11 +73,11 @@ public class AdministrarBatallas {
                 ObjectInputStream objeto = new ObjectInputStream(entrada);
                 
                 try {
-                    while((temp = (Batalla) objeto.readObject())!=null){//simpre lanzara un exception
+                    while((temp = (Batalla) objeto.readObject())!=null){
                         batallas.add(temp);
                     }
                 } catch (EOFException e) {
-                    //encontro el final el archivo
+ 
                 }
                 objeto.close();
                 entrada.close();       
@@ -85,7 +86,7 @@ public class AdministrarBatallas {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        //Google traduce,//algotitmo para reconocer patrones
+      
         
     }
     

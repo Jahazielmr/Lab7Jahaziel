@@ -1,12 +1,13 @@
 package jahazielmorenolab7;
 
 import java.io.Serializable;
+import javax.swing.JOptionPane;
 
 public class Batalla extends Thread implements Serializable{
     
     Guerrero jugador1, jugador2;
     String idB;
-
+    private String bitacora = "";
     public Batalla(Guerrero jugador1, Guerrero jugador2, String id) {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
@@ -44,16 +45,40 @@ public class Batalla extends Thread implements Serializable{
     @Override
     public void run(){
         
-        while(true){
+        while (jugador1.getSalud()>0&&jugador2.getSalud()>0) {
+            jugador2.setSalud(jugador1.Ataque(jugador2.getDefensa(), jugador2.getSalud(), jugador2.getAtaque()));
+            jugador1.setSalud(jugador2.Ataque(jugador1.getDefensa(), jugador1.getSalud(), jugador1.getAtaque()));
             
-            try {
-                
-                Thread.sleep(50);
-            } catch (InterruptedException ex) {
-            }
-               
+            
+            System.out.println(this);
+            bitacora+=this+"\n";
+        }
+        if (jugador1.getSalud()>0) {
+            System.out.println("El ganador es: "+jugador1);
+            bitacora+="El ganador es: "+jugador1;
+        }else{
+            System.out.println("El ganador es: "+jugador2);
+            bitacora+="El ganador es: "+jugador2;
+        }
+        
+        
+        
+        
+        /*
+        while(jugador1.getSalud()>0 || jugador2.getSalud()>0){
+            
+            jugador2.setSalud(jugador1.Ataque(jugador2.getDefensa(), jugador2.getSalud(), jugador2.getAtaque()));
+            
+            jugador1.setSalud(jugador2.Ataque(jugador1.getDefensa(), jugador1.getSalud(), jugador1.getAtaque()));
             
         }
+        
+        if (jugador1.getSalud()> jugador2.getSalud()){
+                JOptionPane.showMessageDialog(null, jugador1.getNickname()+"Ha ganado");
+            } else if (jugador2.getSalud()> jugador1.getSalud()){
+                JOptionPane.showMessageDialog(null, jugador2.getNickname()+"Ha ganado");
+            }
+            */
         
     } 
     
